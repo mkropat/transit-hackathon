@@ -8,6 +8,10 @@ namespace BT_GTFS_realtime.Controllers
     {
         public FeedMessage Get()
         {
+            var client = new BT4U.BT4U_WebServiceSoapClient("BT4U_WebServiceSoap12");
+            var response = client.GetCurrentBusInfo();
+
+
             var message = new FeedMessage();
             message.header = new FeedHeader();
             message.header.gtfs_realtime_version = "1.0";
@@ -19,6 +23,9 @@ namespace BT_GTFS_realtime.Controllers
             update.id = "1922";
 
             var vehicle = update.vehicle = new VehiclePosition();
+
+            var descriptor = vehicle.vehicle = new VehicleDescriptor();
+            descriptor.label = response.InnerXml;
 
             var position = vehicle.position = new Position();
             position.latitude = 37.24212F;
