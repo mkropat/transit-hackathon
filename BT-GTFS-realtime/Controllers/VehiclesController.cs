@@ -11,6 +11,7 @@ namespace BT_GTFS_realtime.Controllers
             var message = new FeedMessage();
             message.header = new FeedHeader();
             message.header.gtfs_realtime_version = "1.0";
+            message.header.incrementality = FeedHeader.Incrementality.FULL_DATASET;
 
             var update = new FeedEntity();
             message.entity.Add(update);
