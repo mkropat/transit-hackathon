@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.bt4u.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.bt4u.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.bt4u.org/">
+      <s:element name="GetScheduledRoutes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledRoutesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduledRoutesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledStopCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routeShortName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledStopCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduledStopCodesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledStopNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routeShortName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledStopNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduledStopNamesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArrivalAndDepartureTimesForTrip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tripID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArrivalAndDepartureTimesForTripResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArrivalAndDepartureTimesForTripResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledPatternPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patternName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledPatternPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduledPatternPointsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentBusInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentBusInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentBusInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentRoutes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentRoutesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentRoutesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextDepartures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="routeShortName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextDeparturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextDeparturesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetScheduledRoutesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduledRoutes" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledRoutesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduledRoutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduledStopCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduledStopCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduledStopNames" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduledStopNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArrivalAndDepartureTimesForTripSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArrivalAndDepartureTimesForTrip" />
+  </wsdl:message>
+  <wsdl:message name="GetArrivalAndDepartureTimesForTripSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArrivalAndDepartureTimesForTripResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledPatternPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduledPatternPoints" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledPatternPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduledPatternPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBusInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentBusInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBusInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentBusInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRoutesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentRoutes" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRoutesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentRoutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextDeparturesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextDepartures" />
+  </wsdl:message>
+  <wsdl:message name="GetNextDeparturesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextDeparturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledRoutesHttpGetIn">
+    <wsdl:part name="stopCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledRoutesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopCodesHttpGetIn">
+    <wsdl:part name="routeShortName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopCodesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopNamesHttpGetIn">
+    <wsdl:part name="routeShortName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopNamesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetArrivalAndDepartureTimesForTripHttpGetIn">
+    <wsdl:part name="tripID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetArrivalAndDepartureTimesForTripHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledPatternPointsHttpGetIn">
+    <wsdl:part name="patternName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledPatternPointsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBusInfoHttpGetIn" />
+  <wsdl:message name="GetCurrentBusInfoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRoutesHttpGetIn" />
+  <wsdl:message name="GetCurrentRoutesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetNextDeparturesHttpGetIn">
+    <wsdl:part name="routeShortName" type="s:string" />
+    <wsdl:part name="stopCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNextDeparturesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledRoutesHttpPostIn">
+    <wsdl:part name="stopCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledRoutesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopCodesHttpPostIn">
+    <wsdl:part name="routeShortName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopCodesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopNamesHttpPostIn">
+    <wsdl:part name="routeShortName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledStopNamesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetArrivalAndDepartureTimesForTripHttpPostIn">
+    <wsdl:part name="tripID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetArrivalAndDepartureTimesForTripHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledPatternPointsHttpPostIn">
+    <wsdl:part name="patternName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledPatternPointsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBusInfoHttpPostIn" />
+  <wsdl:message name="GetCurrentBusInfoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRoutesHttpPostIn" />
+  <wsdl:message name="GetCurrentRoutesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetNextDeparturesHttpPostIn">
+    <wsdl:part name="routeShortName" type="s:string" />
+    <wsdl:part name="stopCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNextDeparturesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="BT4U_WebServiceSoap">
+    <wsdl:operation name="GetScheduledRoutes">
+      <wsdl:input message="tns:GetScheduledRoutesSoapIn" />
+      <wsdl:output message="tns:GetScheduledRoutesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <wsdl:input message="tns:GetScheduledStopCodesSoapIn" />
+      <wsdl:output message="tns:GetScheduledStopCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <wsdl:input message="tns:GetScheduledStopNamesSoapIn" />
+      <wsdl:output message="tns:GetScheduledStopNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <wsdl:input message="tns:GetArrivalAndDepartureTimesForTripSoapIn" />
+      <wsdl:output message="tns:GetArrivalAndDepartureTimesForTripSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <wsdl:input message="tns:GetScheduledPatternPointsSoapIn" />
+      <wsdl:output message="tns:GetScheduledPatternPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <wsdl:input message="tns:GetCurrentBusInfoSoapIn" />
+      <wsdl:output message="tns:GetCurrentBusInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <wsdl:input message="tns:GetCurrentRoutesSoapIn" />
+      <wsdl:output message="tns:GetCurrentRoutesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <wsdl:input message="tns:GetNextDeparturesSoapIn" />
+      <wsdl:output message="tns:GetNextDeparturesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BT4U_WebServiceHttpGet">
+    <wsdl:operation name="GetScheduledRoutes">
+      <wsdl:input message="tns:GetScheduledRoutesHttpGetIn" />
+      <wsdl:output message="tns:GetScheduledRoutesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <wsdl:input message="tns:GetScheduledStopCodesHttpGetIn" />
+      <wsdl:output message="tns:GetScheduledStopCodesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <wsdl:input message="tns:GetScheduledStopNamesHttpGetIn" />
+      <wsdl:output message="tns:GetScheduledStopNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <wsdl:input message="tns:GetArrivalAndDepartureTimesForTripHttpGetIn" />
+      <wsdl:output message="tns:GetArrivalAndDepartureTimesForTripHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <wsdl:input message="tns:GetScheduledPatternPointsHttpGetIn" />
+      <wsdl:output message="tns:GetScheduledPatternPointsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <wsdl:input message="tns:GetCurrentBusInfoHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentBusInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <wsdl:input message="tns:GetCurrentRoutesHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentRoutesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <wsdl:input message="tns:GetNextDeparturesHttpGetIn" />
+      <wsdl:output message="tns:GetNextDeparturesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BT4U_WebServiceHttpPost">
+    <wsdl:operation name="GetScheduledRoutes">
+      <wsdl:input message="tns:GetScheduledRoutesHttpPostIn" />
+      <wsdl:output message="tns:GetScheduledRoutesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <wsdl:input message="tns:GetScheduledStopCodesHttpPostIn" />
+      <wsdl:output message="tns:GetScheduledStopCodesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <wsdl:input message="tns:GetScheduledStopNamesHttpPostIn" />
+      <wsdl:output message="tns:GetScheduledStopNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <wsdl:input message="tns:GetArrivalAndDepartureTimesForTripHttpPostIn" />
+      <wsdl:output message="tns:GetArrivalAndDepartureTimesForTripHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <wsdl:input message="tns:GetScheduledPatternPointsHttpPostIn" />
+      <wsdl:output message="tns:GetScheduledPatternPointsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <wsdl:input message="tns:GetCurrentBusInfoHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentBusInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <wsdl:input message="tns:GetCurrentRoutesHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentRoutesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <wsdl:input message="tns:GetNextDeparturesHttpPostIn" />
+      <wsdl:output message="tns:GetNextDeparturesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BT4U_WebServiceSoap" type="tns:BT4U_WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetScheduledRoutes">
+      <soap:operation soapAction="http://www.bt4u.org/GetScheduledRoutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <soap:operation soapAction="http://www.bt4u.org/GetScheduledStopCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <soap:operation soapAction="http://www.bt4u.org/GetScheduledStopNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <soap:operation soapAction="http://www.bt4u.org/GetArrivalAndDepartureTimesForTrip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <soap:operation soapAction="http://www.bt4u.org/GetScheduledPatternPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <soap:operation soapAction="http://www.bt4u.org/GetCurrentBusInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <soap:operation soapAction="http://www.bt4u.org/GetCurrentRoutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <soap:operation soapAction="http://www.bt4u.org/GetNextDepartures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BT4U_WebServiceSoap12" type="tns:BT4U_WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetScheduledRoutes">
+      <soap12:operation soapAction="http://www.bt4u.org/GetScheduledRoutes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <soap12:operation soapAction="http://www.bt4u.org/GetScheduledStopCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <soap12:operation soapAction="http://www.bt4u.org/GetScheduledStopNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <soap12:operation soapAction="http://www.bt4u.org/GetArrivalAndDepartureTimesForTrip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <soap12:operation soapAction="http://www.bt4u.org/GetScheduledPatternPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <soap12:operation soapAction="http://www.bt4u.org/GetCurrentBusInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <soap12:operation soapAction="http://www.bt4u.org/GetCurrentRoutes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <soap12:operation soapAction="http://www.bt4u.org/GetNextDepartures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BT4U_WebServiceHttpGet" type="tns:BT4U_WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetScheduledRoutes">
+      <http:operation location="/GetScheduledRoutes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <http:operation location="/GetScheduledStopCodes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <http:operation location="/GetScheduledStopNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <http:operation location="/GetArrivalAndDepartureTimesForTrip" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <http:operation location="/GetScheduledPatternPoints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <http:operation location="/GetCurrentBusInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <http:operation location="/GetCurrentRoutes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <http:operation location="/GetNextDepartures" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BT4U_WebServiceHttpPost" type="tns:BT4U_WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetScheduledRoutes">
+      <http:operation location="/GetScheduledRoutes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopCodes">
+      <http:operation location="/GetScheduledStopCodes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledStopNames">
+      <http:operation location="/GetScheduledStopNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArrivalAndDepartureTimesForTrip">
+      <http:operation location="/GetArrivalAndDepartureTimesForTrip" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledPatternPoints">
+      <http:operation location="/GetScheduledPatternPoints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBusInfo">
+      <http:operation location="/GetCurrentBusInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRoutes">
+      <http:operation location="/GetCurrentRoutes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextDepartures">
+      <http:operation location="/GetNextDepartures" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BT4U_WebService">
+    <wsdl:port name="BT4U_WebServiceSoap" binding="tns:BT4U_WebServiceSoap">
+      <soap:address location="http://www.bt4u.org/webservices/bt4u_webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BT4U_WebServiceSoap12" binding="tns:BT4U_WebServiceSoap12">
+      <soap12:address location="http://www.bt4u.org/webservices/bt4u_webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BT4U_WebServiceHttpGet" binding="tns:BT4U_WebServiceHttpGet">
+      <http:address location="http://www.bt4u.org/webservices/bt4u_webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BT4U_WebServiceHttpPost" binding="tns:BT4U_WebServiceHttpPost">
+      <http:address location="http://www.bt4u.org/webservices/bt4u_webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
