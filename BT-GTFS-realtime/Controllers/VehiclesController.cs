@@ -6,14 +6,24 @@ namespace BT_GTFS_realtime.Controllers
 {
     public class VehiclesController : ApiController
     {
-        public IEnumerable<VehicleDescriptor> Get()
+        public FeedMessage Get()
         {
-            return new VehicleDescriptor[] {
-                new VehicleDescriptor {
-                    id = "yellow",
-                    label = "The Yellow Submarine",
-                }
-            };
+            var message = new FeedMessage();
+            message.header = new FeedHeader();
+            message.header.gtfs_realtime_version = "1.0";
+
+            var update = new FeedEntity();
+            message.entity.Add(update);
+
+            update.id = "1922";
+
+            var vehicle = update.vehicle = new VehiclePosition();
+
+            var position = vehicle.position = new Position();
+            position.latitude = 37.24212F;
+            position.longitude = -80.43342F;
+
+            return message;
         }
     }
 }
